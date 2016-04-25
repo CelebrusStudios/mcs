@@ -24,13 +24,13 @@ public class EyeControl : MonoBehaviour
         m = GetComponent<M3DCharacterManager>();
         r = new System.Random();
         
-        Invoke("BlinkTimer", r.Next(MinBlinkRate, MaxBlinkRate) / 1000);
+        Invoke("BlinkTimer", r.Next(MinBlinkRate, MaxBlinkRate) / 1000f);
     }
 
     void BlinkTimer()
     {
         StartCoroutine("Blink");
-        Invoke("BlinkTimer", r.Next(MinBlinkRate, MaxBlinkRate) / 1000);
+        Invoke("BlinkTimer", r.Next(MinBlinkRate, MaxBlinkRate) / 1000f);
     }
 
     IEnumerator Blink ()
